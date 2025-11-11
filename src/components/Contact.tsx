@@ -1,142 +1,74 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
-
-const contactInfo = [
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    details: "123 Paw Street, Dogtown, DT 12345"
-  },
-  {
-    icon: Phone,
-    title: "Call Us",
-    details: "(555) 123-4567"
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    details: "hello@pawsgrooming.com"
-  },
-  {
-    icon: Clock,
-    title: "Hours",
-    details: "Mon-Sun: 8am - 6pm"
-  }
-];
+import { MapPin, Phone, Instagram } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-24 px-4 bg-gradient-to-b from-background to-accent/10">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground">
             Get In Touch
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to book an appointment? We'd love to hear from you!
+            Ready to treat yourself? Book an appointment or get in touch with any questions about our services.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <Card className="p-8 shadow-soft border-2">
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-foreground">
-                    Your Name
-                  </label>
-                  <Input 
-                    id="name"
-                    placeholder="John Doe" 
-                    className="rounded-xl"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-foreground">
-                    Email Address
-                  </label>
-                  <Input 
-                    id="email"
-                    type="email"
-                    placeholder="john@example.com" 
-                    className="rounded-xl"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2 text-foreground">
-                    Phone Number
-                  </label>
-                  <Input 
-                    id="phone"
-                    type="tel"
-                    placeholder="(555) 123-4567" 
-                    className="rounded-xl"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-foreground">
-                    Message
-                  </label>
-                  <Textarea 
-                    id="message"
-                    placeholder="Tell us about your pup and what services you're interested in..." 
-                    className="rounded-xl min-h-32"
-                  />
-                </div>
-                
-                <Button 
-                  type="submit" 
-                  className="w-full rounded-xl py-6 text-lg shadow-soft hover:shadow-xl transition-all"
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <Card className="p-8 shadow-glass backdrop-blur-glass bg-glass-bg border-2 border-glass-border hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-4 bg-primary/10 rounded-2xl flex-shrink-0">
+                <MapPin className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  Find Us
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Sol Central, Mare Fair<br />
+                  Northampton, England
+                </p>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-8 shadow-glass backdrop-blur-glass bg-glass-bg border-2 border-glass-border hover:shadow-xl transition-all">
+            <div className="flex items-start gap-4">
+              <div className="p-4 bg-primary/10 rounded-2xl flex-shrink-0">
+                <Phone className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  Call Us
+                </h3>
+                <a 
+                  href="tel:+4407445980009"
+                  className="text-muted-foreground hover:text-primary transition-colors text-lg"
                 >
-                  Send Message
-                </Button>
-              </form>
-            </Card>
-          </div>
-          
-          <div className="space-y-6">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon;
-              return (
-                <Card 
-                  key={index}
-                  className="p-6 shadow-soft hover:shadow-xl transition-all border-2 bg-card"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-primary/10 rounded-2xl flex-shrink-0">
-                      <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold mb-1 text-foreground">
-                        {info.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {info.details}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
-            
-            <Card className="p-8 bg-gradient-to-br from-primary/10 to-secondary/10 border-2">
-              <h3 className="text-2xl font-bold mb-4 text-foreground">
-                Special Offer! 🎉
-              </h3>
-              <p className="text-lg text-foreground mb-4">
-                First-time customers get 20% off their first grooming service
-              </p>
-              <Button variant="secondary" className="rounded-xl">
-                Claim Your Discount
-              </Button>
-            </Card>
-          </div>
+                  (+44) 07445 980009
+                </a>
+              </div>
+            </div>
+          </Card>
+
+          <Card className="p-8 shadow-glass backdrop-blur-glass bg-glass-bg border-2 border-glass-border hover:shadow-xl transition-all md:col-span-2">
+            <div className="flex items-start gap-4">
+              <div className="p-4 bg-primary/10 rounded-2xl flex-shrink-0">
+                <Instagram className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                  Follow Us
+                </h3>
+                <p className="text-muted-foreground mb-3">
+                  Lustrée Nails | Press Me
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Check out our Instagram highlights for detailed directions and parking information.
+                </p>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </section>

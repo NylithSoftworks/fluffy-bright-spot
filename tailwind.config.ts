@@ -57,13 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        hero: {
-          start: "hsl(var(--hero-gradient-start))",
-          end: "hsl(var(--hero-gradient-end))",
+        glass: {
+          bg: "hsla(var(--glass-bg))",
+          border: "hsla(var(--glass-border))",
         },
       },
       boxShadow: {
-        soft: "var(--shadow-soft)",
+        glass: "var(--glass-shadow)",
+      },
+      backdropBlur: {
+        glass: "var(--glass-blur)",
       },
       transitionProperty: {
         smooth: "var(--transition-smooth)",

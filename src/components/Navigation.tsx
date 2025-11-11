@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { PawPrint } from "lucide-react";
+import { Phone } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const scrollToSection = (id: string) => {
@@ -8,15 +9,14 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-glass bg-glass-bg border-b border-glass-border shadow-glass">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-primary rounded-2xl">
-              <PawPrint className="h-6 w-6 text-primary-foreground" />
-            </div>
-            <span className="text-2xl font-bold text-foreground">Paws & Glam</span>
-          </div>
+          <img 
+            src={logo} 
+            alt="MK Grooming" 
+            className="h-14 w-auto"
+          />
           
           <div className="hidden md:flex items-center gap-8">
             <button 
@@ -32,6 +32,18 @@ const Navigation = () => {
               Services
             </button>
             <button 
+              onClick={() => scrollToSection("before-after")}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Gallery
+            </button>
+            <button 
+              onClick={() => scrollToSection("reviews")}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Reviews
+            </button>
+            <button 
               onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
@@ -45,8 +57,12 @@ const Navigation = () => {
             </button>
           </div>
           
-          <Button className="rounded-full px-6">
-            Book Now
+          <Button 
+            size="lg"
+            className="rounded-full shadow-glass hover:shadow-xl transition-all hover:scale-105"
+          >
+            <Phone className="mr-2 h-4 w-4" />
+            Call Now
           </Button>
         </div>
       </div>

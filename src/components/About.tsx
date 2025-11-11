@@ -1,67 +1,61 @@
-import { Award, Clock, Heart } from "lucide-react";
-
-const features = [
-  {
-    icon: Heart,
-    title: "Caring Approach",
-    description: "We treat every dog with love and patience, ensuring they feel safe and comfortable"
-  },
-  {
-    icon: Award,
-    title: "Expert Groomers",
-    description: "Our certified professionals have years of experience with all breeds and temperaments"
-  },
-  {
-    icon: Clock,
-    title: "Flexible Hours",
-    description: "Open 7 days a week with convenient scheduling to fit your busy lifestyle"
-  }
-];
+import { Card } from "@/components/ui/card";
+import animatedVideo from "@/assets/animated.gif";
 
 const About = () => {
   return (
-    <section className="py-20 px-4 bg-card">
-      <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-              Why Choose Us?
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              With over 10 years of experience, we've built a reputation for providing exceptional grooming services with a personal touch. Your dog's comfort and happiness are our top priorities.
-            </p>
-            
-            <div className="space-y-6 pt-4">
-              {features.map((feature, index) => {
-                const Icon = feature.icon;
-                return (
-                  <div key={index} className="flex gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="p-3 bg-secondary/30 rounded-2xl">
-                        <Icon className="h-6 w-6 text-secondary-foreground" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2 text-foreground">
-                        {feature.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+    <section className="py-24 px-4 bg-gradient-to-b from-secondary/20 to-background">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative order-2 lg:order-1">
+            <Card className="overflow-hidden shadow-glass backdrop-blur-glass bg-glass-bg border-2 border-glass-border p-4">
+              <img 
+                src={animatedVideo} 
+                alt="About MK Grooming" 
+                className="w-full h-auto rounded-2xl"
+              />
+            </Card>
+            <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+            <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/30 rounded-full blur-3xl" />
           </div>
-          
-          <div className="relative">
-            <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl shadow-soft" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="text-6xl font-bold text-primary mb-2">10+</div>
-                <div className="text-xl text-foreground">Years of Experience</div>
-              </div>
+
+          <div className="space-y-6 order-1 lg:order-2">
+            <h2 className="text-4xl md:text-6xl font-bold text-foreground">
+              About MK Grooming
+            </h2>
+            
+            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+              <p>
+                Welcome to MK Grooming, where your dog's comfort and happiness are our top priorities. Based in Northampton, we provide professional grooming services with a personal touch.
+              </p>
+              
+              <p>
+                Our experienced groomer understands that every dog is unique, with their own personality and needs. We take the time to ensure your furry friend feels safe and relaxed throughout their grooming experience.
+              </p>
+              
+              <p>
+                From nervous first-timers to regular clients, we treat every dog with the same level of care, patience, and expertise. Our goal is not just to make your dog look great, but to ensure they enjoy their visit with us.
+              </p>
+
+              <Card className="mt-8 p-6 shadow-glass backdrop-blur-glass bg-glass-bg border-2 border-glass-border">
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <p className="text-foreground font-medium">Qualified & Experienced Groomer</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <p className="text-foreground font-medium">One-on-One Attention</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <p className="text-foreground font-medium">Stress-Free Environment</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <p className="text-foreground font-medium">Premium Products</p>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
         </div>
